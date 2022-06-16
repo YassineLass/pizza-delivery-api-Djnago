@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import User
 from rest_framework.response import Response
 from rest_framework import generics,status
+from drf_yasg.utils import swagger_auto_schema
 from . import serializers
 
 
@@ -10,6 +11,8 @@ from . import serializers
 
 class UserCreateView(generics.GenericAPIView):
     serializer_class = serializers.UserSerializer
+
+    @swagger_auto_schema(operation_summary="Create a new User")
     def post(self,request):
         data = request.data
 

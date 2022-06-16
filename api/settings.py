@@ -33,7 +33,20 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'orders.apps.OrdersConfig',
     'rest_framework',
+    'drf_yasg',
 ]
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Basic': {
+            'type': 'basic'
+      },
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
 
 AUTH_USER_MODEL = 'authentication.User'
 
