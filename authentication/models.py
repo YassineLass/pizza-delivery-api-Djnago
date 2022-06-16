@@ -33,7 +33,7 @@ class CustomUserManager(BaseUserManager):
         if(extra_fields.get('is_superuser') is not True):
             raise ValueError(("Supperuser should have is_superuser set to True"))       
         return self.creat_user(username=username, email=email,password=password,**extra_fields)
-
+        
 class User(AbstractUser):
     username = models.CharField(max_length=25,unique=True)
     email = models.EmailField(max_length=50,unique=True)

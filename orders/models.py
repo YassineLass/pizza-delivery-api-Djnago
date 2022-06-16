@@ -14,7 +14,7 @@ class Order(models.Model):
     )
 
     ORDER_STATUS = (
-        ('PNDING','pending'),
+        ('PENDING','pending'),
         ('DELIVERING','delivering'),
         ('DELIVERED','delivered')
     )
